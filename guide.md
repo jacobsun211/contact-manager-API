@@ -221,7 +221,7 @@ You must implement the following:
 3. **Suggested Commit Flow**  
 
    <!-- - "Initial project structure"   -->
-   - "Add database schema and init script"  
+   <!-- - "Add database schema and init script"   -->
    - "Implement Contact class"  
    - "Add CRUD database methods"  
    - "Implement GET and POST endpoints"  
