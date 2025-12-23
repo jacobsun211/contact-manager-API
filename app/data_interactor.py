@@ -42,22 +42,23 @@ class Contacts:
         cursor.execute(sql)
 
         conn.commit()
-        print("created")
-        return "success"
+        return cursor.rowcount > 0
     
+    def update_contact(id,new_first_name,new_last_name,new_number):
+        cursor.execute(
+            f"UPDATE contacts \
+            SET first_name = '{new_first_name}', last_name = '{new_last_name}', phone_number = '{new_number}' \
+            WHERE id = '{id}'")
+        conn.commit()
+        return cursor.rowcount > 0
+
+
 
 # new = {"first_name":"moshe","last_name":"cohen","phone_number":"628162"}  
 # Contacts.create_contact(new)
+Contacts.update_contact(1,'jake','sun','75678')
 rows = Contacts.get_all_contacts()
 print(Contacts.sql_to_dict(rows))
-
-
-
-
-
-
-
-
 
 
 

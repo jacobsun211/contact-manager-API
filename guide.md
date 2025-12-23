@@ -147,9 +147,9 @@ You must implement the following: -->
    
 
 2. **CRUD Functions**  
-   - `create_contact(first_name, last_name, phone_number)` → returns new contact ID (queried from DB)  
+   <!-- - `create_contact(first_name, last_name, phone_number)` → returns new contact ID (queried from DB)   -->
    <!-- - `get_all_contacts()` → returns list of Contact objects   -->
-   - `update_contact(id, ...)` → returns success boolean  
+   <!-- - `update_contact(id, ...)` → returns success boolean   -->
    - `delete_contact(id)` → returns success boolean
 
    
@@ -188,10 +188,10 @@ You must implement the following: -->
 
    
 
-3. **Database Initialization** (`sql/init.sql`)  
+<!-- 3. **Database Initialization** (`sql/init.sql`)  
    - Create database  
    - Create contacts table with proper schema  
-   - Insert 4 sample contacts for testing (example given below)
+   - Insert 4 sample contacts for testing (example given below) -->
 
    
 
