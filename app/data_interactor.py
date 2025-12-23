@@ -52,11 +52,18 @@ class Contacts:
         conn.commit()
         return cursor.rowcount > 0
 
+    def delete_contact(id):
+        cursor.execute(
+            f"DELETE FROM contacts \
+            WHERE id = '{id}';")
+        conn.commit()
+
 
 
 # new = {"first_name":"moshe","last_name":"cohen","phone_number":"628162"}  
 # Contacts.create_contact(new)
-Contacts.update_contact(1,'jake','sun','75678')
+# Contacts.update_contact(1,'jake','sun','75678')
+# Contacts.delete_contact(3)
 rows = Contacts.get_all_contacts()
 print(Contacts.sql_to_dict(rows))
 
