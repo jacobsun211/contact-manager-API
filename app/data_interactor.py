@@ -1,23 +1,59 @@
 import os
 import mysql.connector
-import sqlite
 
 
-conn = sqlite.connect('test.db')
 
-DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "db"),
-    "port": int(os.getenv("DB_PORT", 3306)),
-    "user": os.getenv("DB_USER", "user"),
-    "password": os.getenv("DB_PASSWORD", "7618"),
-    "database": os.getenv("DB_NAME", "db"),
-}
+conn = mysql.connector.connect(
+    host="localhost",   # change to "mysql" when im opening the api con 
+    port=3008,
+    user="user",
+    password="7618",
+    database="db",
+)
 
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        age INTEGER
-    )
-''')
+cursor = conn.cursor()
+cursor.execute("SELECT * FROM contacts")
+rows = cursor.fetchall()
 
+for row in rows:
+    print(row)
+
+
+class Contacts:
+    def sql_to_dict(rows):
+        contacts_dict = {}
+        for i,contact in enumerate(rows):
+            row = {"id":contact[0],
+             "first_name":contact[1],
+             "last_name":contact[2],
+             "phone_number":contact[3],
+             }
+            contacts_dict[i + 1] = row
+        return contacts_dict
+
+
+print(Contacts.sql_to_dict(rows))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cursor.close()
+conn.close()
