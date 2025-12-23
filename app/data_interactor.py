@@ -30,8 +30,25 @@ class Contacts:
              }
             contacts_dict[i + 1] = row
         return contacts_dict
+    
+    def get_all_contacts():
+        cursor.execute("SELECT * FROM contacts")
+        contacts = cursor.fetchall()
+        return contacts
 
+    def create_contact(contact: dict):
+        sql = f"INSERT INTO contacts (first_name, last_name, phone_number) \
+                VALUES ('{contact["first_name"]}', '{contact["first_name"]}', '{contact["phone_number"]}')"
+        cursor.execute(sql)
 
+        conn.commit()
+        print("created")
+        return "success"
+    
+
+# new = {"first_name":"moshe","last_name":"cohen","phone_number":"628162"}  
+# Contacts.create_contact(new)
+rows = Contacts.get_all_contacts()
 print(Contacts.sql_to_dict(rows))
 
 
