@@ -218,7 +218,7 @@ You must implement the following:
 - **Bonus (+5 pts):** Create a branch for each major component you develop and merge it into the main branch when it’s finished  
     
 3. **Suggested Commit Flow**  
-   - "Initial project structure"  
+   <!-- - "Initial project structure"   -->
    - "Add database schema and init script"  
    - "Implement Contact class"  
    - "Add CRUD database methods"  
