@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:latest
+    restart: unless-stopped
+    ports: "8000"
+    environment:
+      MYSQL_ROOT_PASSWORD: 7618
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 7618
+    volumes:
+      - db-volume:/var/lib/mysql
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+  
+  
+  api: 
+    build: ./api
+    restart: unless-stopped
+    depends on: db
+    ports: 8000:80
+
+volumes:
+  db-volume:
