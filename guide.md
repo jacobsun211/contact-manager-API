@@ -105,20 +105,20 @@ POST /contacts
     "id": 4  
 }
 
-### 3\. Database Operations
+<!-- ### 3\. Database Operations
 
 You must implement the following database operations **without using an ORM**:
 
 - Create a new contact (INSERT)  
 - Retrieve all contacts (SELECT)  
 - Update a contact (UPDATE)  
-- Delete a contact (DELETE)
+- Delete a contact (DELETE) -->
 
-SQL queries should be written manually using raw SQL statements (formatted to include relevant parameters).
+<!-- SQL queries should be written manually using raw SQL statements (formatted to include relevant parameters).
 
 ## Technical Requirements
 
-### Basic Project Structure
+### Basic Project Structure -->
 
 <!-- week10\_contacts/  
 ├── .gitignore  
@@ -144,15 +144,17 @@ You must implement the following: -->
    - Properties: id, first\_name, last\_name, phone\_number  
    - Method to convert contact to dictionary format -->
 
-   
 
-2. **CRUD Functions**  
+
+   # -------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!-- 2. **CRUD Functions**   -->
    <!-- - `create_contact(first_name, last_name, phone_number)` → returns new contact ID (queried from DB)   -->
    <!-- - `get_all_contacts()` → returns list of Contact objects   -->
    <!-- - `update_contact(id, ...)` → returns success boolean   -->
-   - `delete_contact(id)` → returns success boolean
+   <!-- - `delete_contact(id)` → returns success boolean -->
 
-   
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 3. **Database Module**  
    - Function to create and return database connection  
@@ -196,7 +198,7 @@ You must implement the following: -->
    
 
 4. **Configuration requirements**  
-- Environment variables for MySQL container: `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
+<!-- - Environment variables for MySQL container: `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` --> -->
 
 ## Git & Documentation Requirements
 
@@ -213,17 +215,17 @@ You must implement the following: -->
    
 
 2. **Commit Standards**  
-   - Clear commit messages describing what changed  
-   - Commit often  
-- **Bonus (+5 pts):** Create a branch for each major component you develop and merge it into the main branch when it’s finished  
+   <!-- - Clear commit messages describing what changed  
+   - Commit often   -->
+**Bonus (+5 pts):** Create a branch for each major component you develop and merge it into the main branch when it’s finished  
     
 
 3. **Suggested Commit Flow**  
 
    <!-- - "Initial project structure"   -->
    <!-- - "Add database schema and init script"   -->
-   - "Implement Contact class"  
-   - "Add CRUD database methods"  
+   <!-- - "Implement Contact class"   -->
+   <!-- - "Add CRUD database methods"   -->
    - "Implement GET and POST endpoints"  
    - "Implement PUT and DELETE endpoints"  
    - "Add Docker configuration"  
