@@ -134,22 +134,22 @@ SQL queries should be written manually using raw SQL statements (formatted to in
 
 <!-- **Note**: This is only the minimal requirement, and further separation of concerns is encouraged. -->
 
-### 
+<!-- ### 
 
 ### Class Design Requirements
 
-You must implement the following:
+You must implement the following: -->
 
-1. **Contact Class**  
+<!-- 1. **Contact Class**  
    - Properties: id, first\_name, last\_name, phone\_number  
-   - Method to convert contact to dictionary format
+   - Method to convert contact to dictionary format -->
 
    
 
 2. **CRUD Functions**  
-   - `create_contact(first_name, last_name, phone_number)` → returns new contact ID (queried from DB)  
-   - `get_all_contacts()` → returns list of Contact objects  
-   - `update_contact(id, ...)` → returns success boolean  
+   <!-- - `create_contact(first_name, last_name, phone_number)` → returns new contact ID (queried from DB)   -->
+   <!-- - `get_all_contacts()` → returns list of Contact objects   -->
+   <!-- - `update_contact(id, ...)` → returns success boolean   -->
    - `delete_contact(id)` → returns success boolean
 
    
@@ -188,10 +188,10 @@ You must implement the following:
 
    
 
-3. **Database Initialization** (`sql/init.sql`)  
+<!-- 3. **Database Initialization** (`sql/init.sql`)  
    - Create database  
    - Create contacts table with proper schema  
-   - Insert 4 sample contacts for testing (example given below)
+   - Insert 4 sample contacts for testing (example given below) -->
 
    
 
