@@ -2,11 +2,11 @@
 
 ## **Table of Contents**
 
-1. **Project Objectives**  
+1. **Project Objectives  
 2. **Project Overview**  
 3. **Functional Requirements**  
    * 2.1 Data Model  
-   * 2.2 API Endpoints  
+   * 2.2 API Endpoints
    * 2.3 Database Operations  
 4. **Technical Requirements**  
    * 3.1 Required Project Structure  
@@ -217,8 +217,8 @@ You must implement the following:
    - Commit often  
 - **Bonus (+5 pts):** Create a branch for each major component you develop and merge it into the main branch when it’s finished  
     
-3. **Suggested Commit Flow**  
-   - "Initial project structure"  
+3. **Suggested Commit Flow**
+   <!-- - "Initial project structure"   -->
    - "Add database schema and init script"  
    - "Implement Contact class"  
    - "Add CRUD database methods"  
