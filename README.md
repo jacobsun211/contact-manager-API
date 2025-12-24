@@ -5,25 +5,25 @@
 # 325606481
 # negev
 
-# copyright disclaimer: if you want to copy this code... be my guest, i dont know waht you found here tbh...
+copyright disclaimer: if you want to copy this code... be my guest, i dont know waht you found here tbh...
 
 
-## contact-manager-API ## 
+
 
 # what i maneged to do
 
 i did Docker, sql database, api application
 each one with branch of his own
 
-# Docker branch
+-------- Docker branch
 
 2 working containers that can communicate with each other
 
-# sql branch
+--------- sql branch
 
 init sql and data_intractor that has all the needed sql querys
 
-# api branch 
+--------- api branch 
 
 all endpoints work
 (except PUT which works in sql query but i didnt sure on how to do it in the endpoints)
@@ -38,3 +38,4 @@ docker compose up --build
 
 then open: (optional)
 http://localhost:8000/docs  
+
