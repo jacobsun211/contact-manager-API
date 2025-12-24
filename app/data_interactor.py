@@ -40,23 +40,29 @@ class Contacts:
         sql = f"INSERT INTO contacts (first_name, last_name, phone_number) \
                 VALUES ('{contact["first_name"]}', '{contact["first_name"]}', '{contact["phone_number"]}')"
         cursor.execute(sql)
-
         conn.commit()
         return cursor.rowcount > 0
     
-    def update_contact(id,new_first_name,new_last_name,new_number):
+    def update_contact(id,new_first_name,new_last_name,new_number):  # need to change to get dict and not parameters, watch create_contact for refrence
         cursor.execute(
             f"UPDATE contacts \
             SET first_name = '{new_first_name}', last_name = '{new_last_name}', phone_number = '{new_number}' \
-            WHERE id = '{id}'")
+            WHERE id = '{id}';")
         conn.commit()
         return cursor.rowcount > 0
 
+    def delete_contact(id):
+        cursor.execute(
+            f"DELETE FROM contacts \
+            WHERE id = '{id}';")
+        conn.commit()
+        return cursor.rowcount > 0
 
 
 # new = {"first_name":"moshe","last_name":"cohen","phone_number":"628162"}  
 # Contacts.create_contact(new)
-Contacts.update_contact(1,'jake','sun','75678')
+# Contacts.update_contact(1,'jake','sun','75678')
+Contacts.delete_contact(2)
 rows = Contacts.get_all_contacts()
 print(Contacts.sql_to_dict(rows))
 
