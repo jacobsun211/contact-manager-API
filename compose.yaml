@@ -6,6 +6,13 @@ services:
     restart: unless-stopped
     ports: 
       - "3006:3306"
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
     environment:
       MYSQL_ROOT_PASSWORD: 7618
       MYSQL_DATABASE: db
@@ -14,6 +21,7 @@ services:
     volumes:
       - db-volume:/var/lib/mysql
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+  
   
   
 # api:
