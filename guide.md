@@ -163,10 +163,10 @@ You must implement the following: -->
    
 
 4. **FastAPI Application**  
-   - Define request/response models using Pydantic  
+   <!-- - Define request/response models using Pydantic   -->
    - Implement 4 API endpoints (routes)  
    - Handle errors with appropriate HTTP status codes  
-   - **Note:** You do NOT need to use async functions \- regular functions are fine
+   <!-- - **Note:** You do NOT need to use async functions \- regular functions are fine -->
 
 ### Docker Requirements
 
