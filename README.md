@@ -39,3 +39,31 @@ docker compose up --build
 then open: (optional)
 http://localhost:8000/docs  
 
+
+
+in postman:
+
+url: (http://localhost:8000/contacts/)
+
+POST endpoint:
+
+write this format in body:
+{
+    "first_name":"x",
+    "last_name": "y",
+     "phone_number":"010110101"
+}
+
+returns:
+  {
+     "message": "Contact created successfully",
+     "id": new_id
+        }
+
+
+DELETE endpoint:
+
+http://localhost:8000/contacts/?id=1 (the id of the contact you want to delete)
+
+returns: True or False
+
