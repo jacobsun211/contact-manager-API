@@ -1,17 +1,27 @@
 from fastapi import FastAPI
 import uvicorn
 from data_interactor import Contacts
+from pydantic import BaseModel
 
 app = FastAPI()
 
 
+class Contact_params(BaseModel):
+    first_name: str
+    last_name: str
+    phone_number: str
 
-@app.get("/")
+
+@app.get("/contacts")
 def get_contacts():
     contacts = Contacts.get_all_contacts()
     contacts = Contacts.sql_to_dict(contacts)
     return contacts
 
+@app.post("/contacts")
+def post_contact(contact: Contact_params):
+    new_id = Contacts.create_contact(contact.first_name, contact.last_name, contact.phone_number)
+    return new_id
 
 
 

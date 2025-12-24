@@ -39,12 +39,14 @@ class Contacts:
         return contacts
 
     @staticmethod
-    def create_contact(contact: dict):
+    def create_contact(first_name, last_name, phone_number):
         cursor.execute( 
             f"INSERT INTO contacts (first_name, last_name, phone_number) \
-            VALUES ('{contact["first_name"]}', '{contact["last_name"]}', '{contact["phone_number"]}')")
+            VALUES ('{first_name}', '{last_name}', '{phone_number}')")
         conn.commit()
-        return cursor.rowcount > 0
+        cursor.execute("SELECT MAX(id) FROM contacts;")
+        new_contact_id = cursor.fetchone()
+        return new_contact_id
     
     @staticmethod
     def update_contact(id,new_first_name,new_last_name,new_number):  # need to change to get dict and not parameters, watch create_contact for refrence
@@ -64,8 +66,9 @@ class Contacts:
         return cursor.rowcount > 0
 
 
-# new = {"first_name":"moshe","last_name":"cohen","phone_number":"628162"}  
-# Contacts.create_contact(new)
+# new = {"first_name":"ploni","last_name":"almoni","phone_number":"unknown2"}  
+# a = Contacts.create_contact(new)
+# print(a)
 # Contacts.update_contact(1,'jake','sun','75678')
 # Contacts.delete_contact(2)
 # rows = Contacts.get_all_contacts()
