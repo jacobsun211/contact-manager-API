@@ -39,10 +39,10 @@ class Contacts:
         return contacts
 
     @staticmethod
-    def create_contact(contact: dict):
+    def create_contact(first_name, last_name, phone_number):
         cursor.execute( 
             f"INSERT INTO contacts (first_name, last_name, phone_number) \
-            VALUES ('{contact["first_name"]}', '{contact["last_name"]}', '{contact["phone_number"]}')")
+            VALUES ('{first_name}', '{last_name}', '{phone_number}')")
         conn.commit()
         cursor.execute("SELECT MAX(id) FROM contacts;")
         new_contact_id = cursor.fetchone()
