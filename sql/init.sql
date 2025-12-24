@@ -10,7 +10,9 @@ CREATE TABLE IF NOT EXISTS contacts (
 );
 
 INSERT INTO contacts (first_name, last_name, phone_number)
-VALUES ('jacob', 'sun', '050657');
+VALUES ('jacob', 'sun', '050657'),
+       ('shalom', 'brerman','78797'),
+       ('moshe', 'cohen', '657678');
 
 
 
