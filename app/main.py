@@ -26,5 +26,14 @@ def post_contact(contact: Contact_params):
         "id": new_id
         }
 
+# @app.put("/contacts")
+# def update_contact():
+
+
+@app.delete("/contacts")
+def delete_contact(id: int):
+    bool = Contacts.delete_contact(id)
+    return bool
+
 if __name__ == "__main__":
     uvicorn.run(app, host="localhost", port=8000)

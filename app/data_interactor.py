@@ -4,14 +4,6 @@ import uvicorn
 
 
 
-
-
-
-
-
-
-
-
 class Contacts:
     @staticmethod
     def get_connection():
@@ -53,6 +45,12 @@ class Contacts:
             f"INSERT INTO contacts (first_name, last_name, phone_number) \
             VALUES ('{first_name}', '{last_name}', '{phone_number}')")
         conn.commit()
+        new_id = Contacts.new_contact_id()
+        return new_id
+    
+
+    def new_contact_id():
+        conn, cursor = Contacts.get_connection()
         cursor.execute("SELECT MAX(id) FROM contacts;")
         new_contact_id = cursor.fetchone()
         cursor.close()
