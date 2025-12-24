@@ -1,25 +1,22 @@
 import mysql.connector
 
+import uvicorn
 
-
-
-conn = mysql.connector.connect(
-    host="localhost",   # change to "mysql" when im opening the api container 
-    port=3008,
-    user="user",
-    password="7618",
-    database="db",
-)
-
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM contacts")
-rows = cursor.fetchall()
-
-for row in rows:
-    print(row)
 
 
 class Contacts:
+    @staticmethod
+    def get_connection():
+        conn = mysql.connector.connect(
+            host="db",
+            port=3306,
+            user="user",
+            password="7618",
+            database="db",)
+        cursor = conn.cursor()
+        return conn, cursor
+        
+
     @staticmethod
     def sql_to_dict(rows):
         contacts_dict = []
@@ -34,12 +31,16 @@ class Contacts:
     
     @staticmethod
     def get_all_contacts():
+        conn, cursor = Contacts.get_connection()
         cursor.execute("SELECT * FROM contacts")
         contacts = cursor.fetchall()
+        cursor.close()
+        conn.close()
         return contacts
 
     @staticmethod
     def create_contact(first_name, last_name, phone_number):
+        conn, cursor = Contacts.get_connection()
         cursor.execute( 
             f"INSERT INTO contacts (first_name, last_name, phone_number) \
             VALUES ('{first_name}', '{last_name}', '{phone_number}')")
@@ -49,12 +50,16 @@ class Contacts:
     
 
     def new_contact_id():
+        conn, cursor = Contacts.get_connection()
         cursor.execute("SELECT MAX(id) FROM contacts;")
         new_contact_id = cursor.fetchone()
+        cursor.close()
+        conn.close()
         return new_contact_id
     
     @staticmethod
     def update_contact(id,new_first_name,new_last_name,new_number):  # need to change to get dict and not parameters, watch create_contact for refrence
+        conn,cursor = Contacts.get_connection()
         cursor.execute(
             f"UPDATE contacts \
             SET first_name = '{new_first_name}', last_name = '{new_last_name}', phone_number = '{new_number}' \
@@ -64,6 +69,7 @@ class Contacts:
 
     @staticmethod
     def delete_contact(id):
+        conn,cursor = Contacts.get_connection()
         cursor.execute(
             f"DELETE FROM contacts \
             WHERE id = '{id}';")
