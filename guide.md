@@ -226,7 +226,7 @@ You must implement the following: -->
    <!-- - "Add database schema and init script"   -->
    <!-- - "Implement Contact class"   -->
    <!-- - "Add CRUD database methods"   -->
-   - "Implement GET and POST endpoints"  
+   <!-- - "Implement GET and POST endpoints"   -->
    - "Implement PUT and DELETE endpoints"  
    - "Add Docker configuration"  
    - "Add documentation and testing instructions"

@@ -21,7 +21,10 @@ def get_contacts():
 @app.post("/contacts")
 def post_contact(contact: Contact_params):
     new_id = Contacts.create_contact(contact.first_name, contact.last_name, contact.phone_number)
-    return new_id
+    return {
+        "message": "Contact created successfully",
+        "id": new_id
+        }
 
 
 

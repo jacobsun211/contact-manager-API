@@ -44,6 +44,11 @@ class Contacts:
             f"INSERT INTO contacts (first_name, last_name, phone_number) \
             VALUES ('{first_name}', '{last_name}', '{phone_number}')")
         conn.commit()
+        new_id = Contacts.new_contact_id()
+        return new_id
+    
+
+    def new_contact_id():
         cursor.execute("SELECT MAX(id) FROM contacts;")
         new_contact_id = cursor.fetchone()
         return new_contact_id
