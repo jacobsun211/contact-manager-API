@@ -12,6 +12,8 @@ def get_contacts():
     contacts = Contacts.sql_to_dict(contacts)
     return contacts
 
+# @app.post("create/")
+# def post_contact():
 
 
 
