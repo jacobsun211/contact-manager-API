@@ -3,7 +3,7 @@
 ## author:
 Jacob shemesh\
 325606481\
-negev\
+negev
 
 copyright disclaimer: if you want to copy this code... be my guest, i dont know waht you found here tbh...
 
@@ -52,13 +52,13 @@ write this format in body:
     "first_name":"x",\
     "last_name": "y",\
      "phone_number":"010110101"\
-}\
+}
 
 returns:
   {\
      "message": "Contact created successfully",\
      "id": new_id\
-        }\
+        }
 
 **PUT endpoint:**
 
@@ -74,7 +74,7 @@ and you need to enter the changes like that in body
     "first_name":"jake",\
     "last_name": "sun",\
      "phone_number":"1050343"\
-}\
+}
 
 
 return: True of False
@@ -84,6 +84,7 @@ return: True of False
 http://localhost:8000/contacts/?id=1 (the id of the contact you want to delete)
 
 returns: True or False
+
 
 
 
