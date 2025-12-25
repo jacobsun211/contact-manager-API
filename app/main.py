@@ -26,8 +26,10 @@ def post_contact(contact: Contact_params):
         "id": new_id
         }
 
-# @app.put("/contacts")
-# def update_contact():
+@app.put("/contacts{id}")
+def update_contact(id, contact: Contact_params):
+    bool = Contacts.update_contact(id,contact.first_name, contact.last_name, contact.phone_number)
+    return bool
 
 
 @app.delete("/contacts")
